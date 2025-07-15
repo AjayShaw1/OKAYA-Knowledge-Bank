@@ -1,11 +1,35 @@
+
 body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f2f2f2;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  height: 40px;
 }
 
 h1 {
-  color: #333;
+  flex-grow: 1;
+}
+
+input[type="file"], input[type="text"] {
+  margin: 10px;
+  padding: 5px;
+}
+
+main {
+  padding: 20px;
 }
 
 table {
@@ -18,4 +42,28 @@ th, td {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: left;
+}
+
+.login-box, .admin-panel {
+  width: 300px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-box input, .admin-panel input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.login-box button, .admin-panel button {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

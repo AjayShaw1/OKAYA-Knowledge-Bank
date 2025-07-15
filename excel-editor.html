@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excel Editor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2 style="text-align:center">Edit Excel Online</h2>
+  <input type="file" id="uploadExcel" accept=".xlsx" />
+  <div id="excelGrid" style="margin: 20px;"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+  <script>
+    const container = document.getElementById('excelGrid');
+    let hot = new Handsontable(container, {
+      data: [],
+      rowHeaders: true,
+      colHeaders: true,
+      licenseKey: 'non-commercial-and-evaluation'
+    });
+    document.getElementById('uploadExcel').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const workbook = XLSX.read(new Uint8Array(e.target.result), { type: 'array' });
+        const ws = workbook.Sheets[workbook.SheetNames[0]];
+        const data = XLSX.utils.sheet_to_json(ws, { header: 1 });
+        hot.loadData(data);
+      };
+      reader.readAsArrayBuffer(file);
+    });
+  </script>
+</body>
+</html>

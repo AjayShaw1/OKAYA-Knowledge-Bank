@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="admin-panel">
+    <h1>Admin Panel</h1>
+    <p>Upload New Logo:</p>
+    <input type="file" id="newLogo" />
+    <button onclick="alert('Simulated logo update')">Update Logo</button>
+    <p>Edit Page Title:</p>
+    <input type="text" id="pageTitle" placeholder="New Page Title" />
+    <button onclick="updateTitle()">Update Title</button>
+  </div>
+  <script>
+    function updateTitle() {
+      const title = document.getElementById('pageTitle').value;
+      document.title = title;
+      alert("Simulated title change (requires manual HTML edit)");
+    }
+  </script>
+</body>
+</html>
