@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +8,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 </head>
 <body>
-  <header>
+  <header class="header-bar">
     <img src="assets/logo.webp" alt="Logo" class="logo">
     <h1>Call Center Knowledge Bank</h1>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="index.html">🏠 Knowledge Base</a>
+    <a href="slide-pdf.html">📘 Script Viewer</a>
+    <a href="excel-editor.html">📊 Excel Editor</a>
+    <a href="ai.html">🤖 AI Assistant</a>
+    <a href="login.html">🔐 Login</a>
+    <a href="admin.html">⚙️ Admin</a>
+  </nav>
+
+  <div class="container">
     <input type="file" id="excelFile" accept=".xlsx" />
     <input type="text" id="searchBox" placeholder="Search..." />
-  </header>
-  <main>
     <div id="output"></div>
-  </main>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
